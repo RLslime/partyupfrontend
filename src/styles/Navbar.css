@@ -1,0 +1,23 @@
+.navbar {
+  background: #6a1b9a;
+  height: 60px;
+}
+
+.navbar a {
+  color: white;
+  font-size: 1.3rem;
+  text-decoration: none;
+  margin: 5px;
+  line-height: 3;
+  float: left;
+}
+
+button {
+  float: right;
+  height: 60px;
+}
+
+il {
+  color: blue;
+  text-align: right;
+}
