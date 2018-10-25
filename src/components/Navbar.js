@@ -1,6 +1,7 @@
 import React from "react";
 import "../styles/Navbar.css";
 
+
 // By importing the Navbar.css file, it is added to the DOM whenever this component loads
 
 // We can also style a component inside of its JavaScript file by adding style properties to its rendered elements
@@ -10,9 +11,20 @@ import "../styles/Navbar.css";
 
 const styles = {
   navbarStyle: {
-    background: "green",
+    background: "lightblue",
     justifyContent: "flex",
     textAlign: "center"
+  },
+  peeStyle: {
+    fontSize: "50px",
+    top: "-40px",
+    position: "relative",
+    color: "darkorange"
+  },
+  buttonStyle: {
+    position: "absolute",
+right: "10px",
+top: "15px",
   }
 };
 
@@ -21,9 +33,10 @@ const styles = {
 const Navbar = () => (
   <nav style={styles.navbarStyle} className="navbar">
   <row>
-    <a display="block" href="/">Party Up |</a>
+    <a display="block" href="/"><img border="0" src={process.env.PUBLIC_URL + '/puplogo.png'} alt="Party Up" width="65" hieght="65" /></a>
     <a href="/Signin">| Sign In</a>
-    <button type="button"><a href="/Post">Find Help!</a></button>
+    <p style={styles.peeStyle}> Party Up! </p>
+    <a href="/Post" style={styles.buttonStyle}>Find Help!</a>
   </row>
   </nav>
 );

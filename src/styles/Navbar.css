@@ -1,6 +1,7 @@
 .navbar {
   background: #6a1b9a;
-  height: 60px;
+  height: 75px;
+  overflow: hidden;
 }
 
 .navbar a {
@@ -21,3 +22,4 @@ il {
   color: blue;
   text-align: right;
 }
+

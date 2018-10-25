@@ -8,9 +8,11 @@ const styles = {
       height: "150px",
       width: "400px",
       border: "5px solid black",
+      borderRadius: "10px",
       padding: "50px",
       margin: "5px",
-      marginLeft: "0px"
+      marginLeft: "0px",
+      backgroundColor: "darkgrey"
     }
   };
 

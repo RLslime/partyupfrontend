@@ -6,9 +6,11 @@ const styles = {
       height: "150px",
       width: "400px",
       border: "5px solid black",
+      borderRadius: "10px",
       padding: "50px",
       margin: "5px",
-      marginLeft: "0px"
+      marginLeft: "0px",
+      backgroundColor: "darkgrey"
     }
   };
 export default class PostForm extends React.Component {
@@ -52,7 +54,7 @@ export default class PostForm extends React.Component {
           <Col md={6}>
             <FormGroup>
               <Label for="exampleHelp">What do you need help with?</Label>
-              <Input type="text" name="help" id="examplehelp" placeholder="Achievement name, multiplayer deathmatch, etc..."/>
+              <Input type="text" name="help" id="examplehelp" placeholder="Achievement name, multiplayer deathmatch, etc..." maxLength="100"/>
             </FormGroup>
           </Col>
           <Col md={4}>
