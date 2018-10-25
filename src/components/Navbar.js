@@ -33,7 +33,7 @@ top: "15px",
 const Navbar = () => (
   <nav style={styles.navbarStyle} className="navbar">
   <row>
-    <a display="block" href="/"><img border="0" src={process.env.PUBLIC_URL + '/puplogo.png'} alt="Party Up" width="65" hieght="65" /></a>
+    <a href="/"><img border="0" src={process.env.PUBLIC_URL + '/puplogo.png'} alt="Party Up" width="65" hieght="65" /></a>
     <a href="/Signin">| Sign In</a>
     <p style={styles.peeStyle}> Party Up! </p>
     <a href="/Post" style={styles.buttonStyle}>Find Help!</a>

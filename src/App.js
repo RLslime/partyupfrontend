@@ -1,16 +1,13 @@
 import React from "react";
-import Reactstrap from "reactstrap";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
-import Cards from "./components/Cards";
 import PostForm from "./components/Postcard";
 import SignIn from "./components/Signin";
 import CreateForm from "./components/Createlogin";
 import Wrapper from "./components/Wrapper";
-import cards from "./cards.json";
 import Firstcards from "./components/Firstcards";
 import Nextcards from "./components/Nextcards";
-
+import Footer from "./components/Footer"
 
 const styles = {
   appStyle: {
@@ -25,6 +22,10 @@ const styles = {
     display: "inline flex",
     position: "fixed",
     zIndex: "2"
+  },
+  linkStyle: {
+    textAlign: "center",
+    margin:"5px"
   }
 };
 
@@ -48,7 +49,12 @@ const App = () => (
     {/* <PostForm /> */}
     {/* <SignIn /> */}
     {/* <CreateForm /> */}
+    <div style={styles.linkStyle}>
     <a href="/">prev</a> <a href="/Next" float="right">next</a>
+    </div>
+    <div>
+    <Footer />
+    </div>
   </div>
   </Router>
 );
