@@ -1,6 +1,6 @@
 import React from 'react';
 import { Col, Row, Button, Form, FormGroup, Label, Input,  } from 'reactstrap';
-
+import API from "../util/API"
 const styles = {
     postStyle: {
       height: "150px",
@@ -22,11 +22,22 @@ export default class PostForm extends React.Component {
     help: ""
   };
 
-  // handleFormSubmit = event => {
-  //   event.preventDefault();
-  //   alert(`Game Title: ${this.state.gameTitle}\nPlatform: ${this.state.platform}\n Handle: ${this.state.gamertag}\nDescritption: ${this.state.help}`);
-  //   this.setState({})
-  // }
+  handleInputChange = (event) => {
+    event.preventDefault();
+    const { name, value} = event.target;
+    this.setState({
+      [name]: value
+    })
+  }
+
+  handleFormSubmit = event => {
+    event.preventDefault();
+    API.createGame(this.state)
+    .then(res => {
+      console.log("success")
+    })
+    .catch(err => console.log(err));
+  }
 
 
   render() {
@@ -36,25 +47,25 @@ export default class PostForm extends React.Component {
           <Col md={6}>
             <FormGroup>
               <Label for="exampleGameTitle">Game Title</Label>
-              <Input type="gameTitle" name="gameTitle" id="exampleGameTitle" placeholder="Game you need help with"/>
+              <Input onChange={this.handleInputChange} type="gameTitle" name="gameTitle" id="exampleGameTitle" placeholder="Game you need help with"/>
             </FormGroup>
           </Col>
           <Col md={6}>
             <FormGroup>
               <Label for="examplePlatform">Platform</Label>
-              <Input type="platform" name="platform" id="examplePlatform" placeholder="PS4, Switch, Xbox One, PC" />
+              <Input onChange={this.handleInputChange} type="platform" name="platform" id="examplePlatform" placeholder="PS4, Switch, Xbox One, PC" />
             </FormGroup>
           </Col>
         </Row>
         <FormGroup>
           <Label for="exampleGamertag">Gamertag</Label>
-          <Input type="gamertag" name="gamertag" id="exampleGamertag" placeholder="Your Platform Handle"/>
+          <Input onChange={this.handleInputChange} type="gamertag" name="gamertag" id="exampleGamertag" placeholder="Your Platform Handle"/>
         </FormGroup>
         <Row form>
           <Col md={6}>
             <FormGroup>
               <Label for="exampleHelp">What do you need help with?</Label>
-              <Input type="text" name="help" id="examplehelp" placeholder="Achievement name, multiplayer deathmatch, etc..." maxLength="100"/>
+              <Input onChange={this.handleInputChange} type="text" name="help" id="examplehelp" placeholder="Achievement name, multiplayer deathmatch, etc..." maxLength="100"/>
             </FormGroup>
           </Col>
           <Col md={4}>
